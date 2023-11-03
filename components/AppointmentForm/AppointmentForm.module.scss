@@ -1,0 +1,6 @@
+.form{
+	@apply flex flex-col justify-center bg-blue-500/40 rounded-lg p-5 min-w-[230px];
+}
+.input{
+	@apply m-1 p-1 text-white
+}
