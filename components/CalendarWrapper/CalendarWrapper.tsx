@@ -10,17 +10,16 @@ import { usePathname } from 'next/navigation'
 function CalendarWrapper() {
 
 	const [date, setDate] = useState<DateRange | undefined>()
-	const { rangeDate, setRangeDate } = useRangeDate()
+	const { setRangeDate } = useRangeDate()
 
 	const pathName = usePathname();
 
 	useEffect(() => {
-		if(date) setRangeDate(date);
-	},[date])
+		setRangeDate(date);
+	},[date, setRangeDate])
 
 	const resetRange = () => {
 		setDate(undefined) 
-		setRangeDate({})
 	}
 	const checkEmpty: SelectRangeEventHandler | undefined = (e) => {
 		if(e === undefined) {

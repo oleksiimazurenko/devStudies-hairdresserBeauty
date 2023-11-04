@@ -49,7 +49,7 @@ export default function HistoryList({
 			if (rangeSorted.length === 0) {
 				return (
 					<div className={styles.historyList}>
-						<p className='text-white text-center col-span-3 text-xl'>За цим діапазоном немає записів</p>
+						<p className='text-white text-center col-span-3 text-xl p-10 rounded-md bg-gradient-to-t from-slate-400 to-slate-300'>За цим діапазоном немає записів</p>
 					</div>
 				)
 			}

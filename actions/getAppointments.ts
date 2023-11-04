@@ -25,32 +25,12 @@ export default async function getAppointments(): Promise<TAppointment[] | string
 
 	}
 
-	// try{
+	try{
 		
-	// 	const appointments: TAppointment[] = await prisma.appointments.findMany()
+		const appointments: TAppointment[] = await prisma.appointments.findMany()
 
-	// 	return appointments
-
-	// } catch(e) {
-
-	// 	console.log(`Не вдається отримати данні на сервері (запит відбувався на сервері). Ось така помилка ${getErrorMessage(e)}`)
-
-	// 	return `Не вдається отримати данні на сервері (запит відбувався на сервері). Ось така помилка ${getErrorMessage(e)}`
-		
-	// }
-
-	async function fetchAppointments() {
-		return new Promise<TAppointment[]>((resolve) => {
-			setTimeout(async () => {
-				const appointments: TAppointment[] = await prisma.appointments.findMany();
-				resolve(appointments);
-			}, 15000); 
-		});
-	}
-
-	try {
-		const appointments = await fetchAppointments();
 		return appointments
+
 	} catch(e) {
 
 		console.log(`Не вдається отримати данні на сервері (запит відбувався на сервері). Ось така помилка ${getErrorMessage(e)}`)
@@ -58,5 +38,25 @@ export default async function getAppointments(): Promise<TAppointment[] | string
 		return `Не вдається отримати данні на сервері (запит відбувався на сервері). Ось така помилка ${getErrorMessage(e)}`
 		
 	}
+
+	// async function fetchAppointments() {
+	// 	return new Promise<TAppointment[]>((resolve) => {
+	// 		setTimeout(async () => {
+	// 			const appointments: TAppointment[] = await prisma.appointments.findMany();
+	// 			resolve(appointments);
+	// 		}, 3000); 
+	// 	});
+	// }
+
+	// try {
+	// 	const appointments = await fetchAppointments();
+	// 	return appointments
+	// } catch(e) {
+
+	// 	console.log(`Не вдається отримати данні на сервері (запит відбувався на сервері). Ось така помилка ${getErrorMessage(e)}`)
+
+	// 	return `Не вдається отримати данні на сервері (запит відбувався на сервері). Ось така помилка ${getErrorMessage(e)}`
+		
+	// }
 
 }

@@ -19,10 +19,10 @@ type DateRange = {
 
 type TRangeDate = {
   rangeDate: DateRange | undefined;
-  setRangeDate: (status: DateRange) => void;
+  setRangeDate: (status: DateRange | undefined) => void;
 } 
 
 export const useRangeDate = create<TRangeDate>((set) => ({
   rangeDate: {},
-  setRangeDate: (status: DateRange) => set({rangeDate: status})
+  setRangeDate: (status) => set({rangeDate: status})
 }))
