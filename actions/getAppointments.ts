@@ -31,13 +31,17 @@ export default async function getAppointments(): Promise<TAppointment[] | string
 
 		return appointments
 
+
 	} catch(e) {
 
 		console.log(`Не вдається отримати данні на сервері (запит відбувався на сервері). Ось така помилка ${getErrorMessage(e)}`)
 
-		return `Не вдається отримати данні на сервері (запит відбувався на сервері). Ось така помилка ${getErrorMessage(e)}`
+		return `Не вдається отримати данні на сервері (запит відбувався в файлику getAppointments). Ось така помилка ${getErrorMessage(e)}`
 		
 	}
+
+
+	// Ниже код для тестирования Skeleton (более длительная задержка запроса на сервер)
 
 	// async function fetchAppointments() {
 	// 	return new Promise<TAppointment[]>((resolve) => {

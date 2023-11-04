@@ -16,7 +16,7 @@ export default function HistoryList({
 	const { rangeDate } = useRangeDate()
 
 	if (typeof data === 'string') {
-		return <div className={styles.historyList}>{data}</div>
+		return <div className='text-white text-center flex flex-col justify-center  text-xl p-10 rounded-md bg-gradient-to-t from-slate-400 to-slate-300'>{data}</div>
 	} else if (Array.isArray(data)) {
 
 		const sortedAppointments = data

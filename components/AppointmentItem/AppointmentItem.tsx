@@ -65,7 +65,7 @@ export default function AppointmentItem({
 				{
 					canceled 
 						&& 
-					<div className='w-full py-[47px] text-center rounded-b-[5px]'>Запис відмінений</div>
+					<div className='w-full py-[47px] text-center rounded-b-[5px]'>Запис скасований</div>
 				}
 				{
 					dayjs(date).diff(undefined, 'minute') < 0 
