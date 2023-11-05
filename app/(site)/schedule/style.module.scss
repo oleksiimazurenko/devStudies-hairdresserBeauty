@@ -3,11 +3,10 @@
 	grid  sm:grid-cols-[1fr,_3fr] gap-5
 	w-full max-w-screen-lg
 	font-sans text-base 
-	mx-auto sm:pr-3 sm:pl-7 min-[100px]:p-3
-	bg-slate-100 
-	border border-gray-700
-	rounded-lg
+	mx-auto sm:pr-3 min-[100px]:p-3
 	min-w-[400px]
+	h-[100%]
+	sm:pt-[10px] min-[250px]:pb-[48px] 
 }
 
 @media (max-width: 640px) {

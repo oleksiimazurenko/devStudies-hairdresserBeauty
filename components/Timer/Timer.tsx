@@ -57,8 +57,8 @@ export default function Timer({ date }: { date: string }) {
 
 	return (
 		<span className='flex flex-col justify-center items-center'>
-			<span>Залишилось до приходу клієнта</span>
-			<span className='!text-[15px]'>{timeHours} та {timeMinutes}</span>
+			<span><i>Залишилось до приходу клієнта</i></span>
+			<span className='!text-[13px]'><b>{timeHours} та {timeMinutes}</b></span>
 		</span>
 		
 	)

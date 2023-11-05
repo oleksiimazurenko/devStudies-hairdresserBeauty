@@ -1,6 +1,7 @@
 'use client'
 
 import { TAppointment } from '@/types/types'
+import { Separator } from "@/components/ui/separator"
 
 import {
   Card,
@@ -41,11 +42,16 @@ export default function AppointmentItem({
 			<CardHeader className='p-2 rounded-t-[5px]'>
 				<CardTitle className='text-sm text-center'>Картка запису</CardTitle>
 			</CardHeader>
+			<Separator/>
 			<CardContent className='px-0 pb-0'>
-				<p className='text-[13px] p-1 text-center leading-4'>Дата та час запису <br/> {formattedDate}</p>
-				<p className='text-[13px] p-1 text-center leading-4'>Як звати клієнта<br/> {name}</p>
-				<p className='text-[13px] p-1 text-center leading-4'>Вид послуги<br/> {service}</p>
-				<p className='text-[13px] p-1 text-center leading-4'>Номер телефону клієнта<br/> {phone}</p>
+				<p className='text-[13px] p-1 text-center leading-4'><i>Дата та час запису</i><br/><b>{formattedDate}</b></p>
+				<Separator/>
+				<p className='text-[13px] p-1 text-center leading-4'><i>Як звати клієнта</i><br/><b>{name}</b></p>
+				<Separator/>
+				<p className='text-[13px] p-1 text-center leading-4'><i>Вид послуги</i><br/><b>{service}</b></p>
+				<Separator/>
+				<p className='text-[13px] p-1 text-center leading-4'><i>Номер телефону клієнта</i><br/><b>{phone}</b></p>
+				<Separator/>
 				{
 					!canceled 
 						&& 
@@ -54,6 +60,7 @@ export default function AppointmentItem({
 					<p className='text-[13px] p-1 text-center leading-4'>{!canceled && <Timer date={date} />}</p>
 				}
 			</CardContent>
+			<Separator/>
 			<CardFooter className='px-0 w-full pb-0 rounded-b-[5px] justify-center'>
 				{
 					!canceled 

@@ -4,9 +4,12 @@
 	min-[320px]:grid-cols-1
 	min-[820px]:grid-cols-2
 	lg:grid-cols-3 
-	gap-4
+	gap-x-2
+	gap-y-7
+	pt-4
 	justify-items-center justify-center overflow-y-auto
-	h-[75vh] items-center
+	items-center
 	max-[640px]:border max-[640px]:border-solid max-[640px]:divide-gray-500
 	pt-[10px]
+	overflow-x-hidden
 }

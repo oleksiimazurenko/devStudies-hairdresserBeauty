@@ -48,7 +48,7 @@ export default async function getAppointments(): Promise<TAppointment[] | string
 	// 		setTimeout(async () => {
 	// 			const appointments: TAppointment[] = await prisma.appointments.findMany();
 	// 			resolve(appointments);
-	// 		}, 3000); 
+	// 		}, 30000); 
 	// 	});
 	// }
 

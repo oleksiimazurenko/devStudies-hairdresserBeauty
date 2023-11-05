@@ -11,7 +11,7 @@ export default function HistoryLayout({
 }) {
   return (
     <section className={styles.section}>
-			<div className='flex flex-col items-center self-center'>
+			<div className='flex flex-col'>
 				<CalendarWrapper/>
 			</div>
 			<Suspense fallback={ <Loading/> }>

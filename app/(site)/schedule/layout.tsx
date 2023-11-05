@@ -12,7 +12,7 @@ export default function ScheduleLayout({
 }) {
   return (
     <section className={styles.section}>
-			<div className='flex flex-col items-center self-center'>
+			<div className='flex flex-col'>
 				<CalendarWrapper />
 				<AppointmentForm />
 			</div>

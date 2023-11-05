@@ -17,9 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} mx-auto p-5 min-h-screen`}>
-        <Header/>
-        <main className='max-w-screen-lg mx-auto'>
+      <body className={`${inter.className} mx-auto p-5 h-[100vh]`}>
+        
+        <main className='max-w-screen-lg mx-auto px-4 py-3 bg-slate-100/70 rounded-lg h-[100%]'>
+          <Header/>
           {children}
         </main>
       </body>
