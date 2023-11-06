@@ -80,12 +80,12 @@ export default function NavBarWrapper() {
 								<ListItem href="/" title="Пуста сторінка">
 									Опис якоїсь додаткової сторінки
 								</ListItem>
-								<ListItem href="/" title="Пуста сторінка">
+								{/* <ListItem href="/" title="Пуста сторінка">
 									Опис якоїсь додаткової сторінки
 								</ListItem>
 								<ListItem href="/" title="Пуста сторінка">
 									Опис якоїсь додаткової сторінки
-								</ListItem>
+								</ListItem> */}
 							</ul>
 						</NavigationMenuContent>
 					</NavigationMenuItem>
@@ -137,6 +137,7 @@ export default function NavBarWrapper() {
 												src="/mum.jpg"
 												width={100}
 												height={100}
+												className='rounded-lg'
 												alt="Picture of the author"
 												/>
 												<div className="mb-1 mt-1 text-lg font-medium text-center">
