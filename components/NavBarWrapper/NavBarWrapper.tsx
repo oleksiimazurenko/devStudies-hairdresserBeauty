@@ -121,60 +121,57 @@ export default function NavBarWrapper() {
 					<Button variant="outline">Меню сайту</Button>
 				</PopoverTrigger>
 				<PopoverContent className="w-auto">
+					
 				<NavigationMenu className={cn('justify-self-end')}>
-					<NavigationMenuList>
+					<NavigationMenuList className='flex-col'>
+						
 						<NavigationMenuItem className='!mx-5'>
-							<NavigationMenuTrigger>Інформація</NavigationMenuTrigger>
-							<NavigationMenuContent>
-								<ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-									<li className="row-span-3">
-										<NavigationMenuLink asChild>
-											<a
-												className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-												href="/"
-											>
-												{/* <Icons.logo className="h-6 w-6" /> */}
-												<div className="mb-2 mt-4 text-lg font-medium">
-													Графік роботи
-												</div>
-												<p className="text-sm leading-tight text-muted-foreground">
-													<li>Стрижки від 120 грн.</li>
-													<li>Фарбування волосся (фарба клієнта) від 150 грн.</li>
-													<li>Зачіски від 150 грн.</li>
-													<li>Хімічна завивка від 200 грн.</li>
-													<li>Догляд за волоссям</li>
-												</p>
-											</a>
-										</NavigationMenuLink>
-									</li>
-									<ListItem href="/" title="Пуста сторінка">
-										Опис якоїсь додаткової сторінки
-									</ListItem>
-									<ListItem href="/" title="Пуста сторінка">
-										Опис якоїсь додаткової сторінки
-									</ListItem>
-									<ListItem href="/" title="Пуста сторінка">
-										Опис якоїсь додаткової сторінки
-									</ListItem>
-								</ul>
-							</NavigationMenuContent>
-						</NavigationMenuItem>
-						<NavigationMenuItem className='!mx-5'>
-							<NavigationMenuTrigger>Інші сторінки</NavigationMenuTrigger>
-							<NavigationMenuContent>
-								<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-									{components.map((component) => (
-										<ListItem
-											key={component.title}
-											title={component.title}
-											href={component.href}
+							<ul className="grid gap-1 p-1 max-[640px]:w-[300px] sm:w-[400px] md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+								<li className="row-span-3">
+									<NavigationMenuLink asChild>
+										<a
+											className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+											href="/"
 										>
-											{component.description}
-										</ListItem>
-									))}
-								</ul>
-							</NavigationMenuContent>
+											<div className="mb-1 mt-1 text-lg font-medium">
+												Графік роботи
+											</div>
+											<p className="text-sm leading-tight text-muted-foreground">
+												<li>Стрижки від 120 грн.</li>
+												<li>Фарбування волосся (фарба клієнта) від 150 грн.</li>
+												<li>Зачіски від 150 грн.</li>
+												<li>Хімічна завивка від 200 грн.</li>
+												<li>Догляд за волоссям</li>
+											</p>
+										</a>
+									</NavigationMenuLink>
+								</li>
+								<ListItem href="/" title="Пуста сторінка">
+									Опис якоїсь додаткової сторінки
+								</ListItem>
+								<ListItem href="/" title="Пуста сторінка">
+									Опис якоїсь додаткової сторінки
+								</ListItem>
+								<ListItem href="/" title="Пуста сторінка">
+									Опис якоїсь додаткової сторінки
+								</ListItem>
+							</ul>
 						</NavigationMenuItem>
+
+						<NavigationMenuItem className='!mx-5'>
+							<ul className="grid gap-1 p-1 md:grid-cols-2 max-[640px]:w-[300px] sm:w-[400px] md:w-[400px] lg:w-[500px]">
+								{components.map((component) => (
+									<ListItem
+										key={component.title}
+										title={component.title}
+										href={component.href}
+									>
+										{component.description}
+									</ListItem>
+								))}
+							</ul>
+						</NavigationMenuItem>
+
 						<NavigationMenuItem className='!mx-5'>
 							<Link href="/" legacyBehavior passHref>
 								<NavigationMenuLink className='text-sm'>
@@ -182,6 +179,7 @@ export default function NavBarWrapper() {
 								</NavigationMenuLink>
 							</Link>
 						</NavigationMenuItem>
+
 					</NavigationMenuList>
 				</NavigationMenu>
 				</PopoverContent>
