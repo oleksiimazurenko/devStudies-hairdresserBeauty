@@ -70,10 +70,6 @@ export default function CancelModal({ id }: { id: number }) {
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Ви впевненні що хочете видалити цей запис?</AlertDialogTitle>
-          <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
-          </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel
@@ -82,12 +78,12 @@ export default function CancelModal({ id }: { id: number }) {
 							if (isDisabled) setIsDisabled(false)
 						}}
 					>
-						Cancel
+						Скасувати
 					</AlertDialogCancel>
           <AlertDialogAction 
 						onClick={getCancelAppointment}
 						disabled={isDisabled}>
-							Continue
+							Продовжити
 					</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

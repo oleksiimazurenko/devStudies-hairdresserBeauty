@@ -72,7 +72,7 @@ export default function NavBarWrapper() {
 											alt="Picture of the author"
 											/>
 											<div className="mb-2 mt-4 text-lg font-medium text-center">
-												Якась інформація
+												Олена Мазуренко
 											</div>
 										</a>
 									</NavigationMenuLink>
@@ -137,7 +137,7 @@ export default function NavBarWrapper() {
 												alt="Picture of the author"
 												/>
 												<div className="mb-1 mt-1 text-lg font-medium text-center">
-													Якась інформація
+													Олена Мазуренко
 												</div>
 											</a>
 										</NavigationMenuLink>
