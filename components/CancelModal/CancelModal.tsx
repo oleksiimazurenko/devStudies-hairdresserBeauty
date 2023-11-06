@@ -1,19 +1,22 @@
 'use client'
 
-import * as Dialog from '@radix-ui/react-dialog'
 import { useTransition } from '@react-spring/web'
 
 import { useRef, useState, useTransition as useTransitionNext } from 'react'
 import cancelAppointment from '@/actions/cancelAppointment'
+
 import {
-	ButtonClose,
-	ButtonOk,
-	Content,
-	ModalButtons,
-	OverlayBackground,
-	Status,
-	Title
-} from './RadixModalComponents'
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+
 import { Button } from '@/components/ui/button'
 
 export default function CancelModal({ id }: { id: number }) {
@@ -60,42 +63,35 @@ export default function CancelModal({ id }: { id: number }) {
 	}
 
 	return (
-		<Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
-			<Dialog.Trigger asChild>
-				<Button className='m-3'>Відмінити запис</Button>
-			</Dialog.Trigger>
+		<AlertDialog>
+      <AlertDialogTrigger asChild className='mt-[6px]'>
+        <Button variant="outline">Відмінити запис</Button>
+      </AlertDialogTrigger>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>Ви впевненні що хочете видалити цей запис?</AlertDialogTitle>
+          <AlertDialogDescription>
+            This action cannot be undone. This will permanently delete your
+            account and remove your data from our servers.
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel
+						onClick={() => {
+							setIsOpen(false)
+							if (isDisabled) setIsDisabled(false)
+						}}
+					>
+						Cancel
+					</AlertDialogCancel>
+          <AlertDialogAction 
+						onClick={getCancelAppointment}
+						disabled={isDisabled}>
+							Continue
+					</AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
 
-			<Dialog.Portal forceMount>
-				{transition((style, isOpen) => (
-					<>
-						{isOpen ? (
-							<OverlayBackground style={{ opacity: style.opacity }} />
-						) : null}
-						{isOpen ? (
-							<Content forceMount style={style} className='bg-blue-500/40 rounded-lg p-5'>
-								<Title>Ви впевненні що хочете видалити цей запис?</Title>
-								<ModalButtons>
-									<ButtonOk
-										onClick={getCancelAppointment}
-										disabled={isDisabled}
-									>
-										OK
-									</ButtonOk>
-									<ButtonClose
-										onClick={() => {
-											setIsOpen(false)
-											if (isDisabled) setIsDisabled(false)
-										}}
-									>
-										Close
-									</ButtonClose>
-								</ModalButtons>
-								<Status ref={statusRef} />
-							</Content>
-						) : null}
-					</>
-				))}
-			</Dialog.Portal>
-		</Dialog.Root>
 	)
 }
