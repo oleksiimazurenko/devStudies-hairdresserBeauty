@@ -116,7 +116,7 @@ export default function NavBarWrapper() {
 					<Button variant="outline">Меню сайту</Button>
 				</PopoverTrigger>
 				<PopoverContent className={cn('"w-auto overflow-y-scroll w-[370px]"', {
-					['h-[90vh]']: window.innerHeight <= 700
+					['h-[90vh]']: typeof window !== 'undefined' ? window.innerHeight <= 700 : null
 				})}>
 					<NavigationMenu className={cn('justify-self-end')}>
 						<NavigationMenuList className='flex-col'>
