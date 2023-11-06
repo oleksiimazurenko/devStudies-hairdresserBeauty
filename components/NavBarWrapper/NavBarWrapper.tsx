@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 import Link from 'next/link'
 
 import {
@@ -59,20 +61,19 @@ export default function NavBarWrapper() {
 								<li className="row-span-3">
 									<NavigationMenuLink asChild>
 										<a
-											className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+											className="flex h-full w-full select-none flex-col justify-end items-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
 											href="/"
 										>
-											{/* <Icons.logo className="h-6 w-6" /> */}
-											<div className="mb-2 mt-4 text-lg font-medium">
-												Графік роботи
+											<Image
+											src="/mum.jpg"
+											width={100}
+											height={100}
+											className='rounded-lg'
+											alt="Picture of the author"
+											/>
+											<div className="mb-2 mt-4 text-lg font-medium text-center">
+												Якась інформація
 											</div>
-											<p className="text-sm leading-tight text-muted-foreground">
-												<li>Стрижки від 120 грн.</li>
-												<li>Фарбування волосся (фарба клієнта) від 150 грн.</li>
-												<li>Зачіски від 150 грн.</li>
-												<li>Хімічна завивка від 200 грн.</li>
-												<li>Догляд за волоссям</li>
-											</p>
 										</a>
 									</NavigationMenuLink>
 								</li>
@@ -129,19 +130,18 @@ export default function NavBarWrapper() {
 									<li className="row-span-3">
 										<NavigationMenuLink asChild>
 											<a
-												className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+												className="flex h-full w-full select-none flex-col justify-end items-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
 												href="/"
 											>
-												<div className="mb-1 mt-1 text-lg font-medium">
-													Графік роботи
+												<Image
+												src="/mum.jpg"
+												width={100}
+												height={100}
+												alt="Picture of the author"
+												/>
+												<div className="mb-1 mt-1 text-lg font-medium text-center">
+													Якась інформація
 												</div>
-												<p className="text-sm leading-tight text-muted-foreground">
-													<li>Стрижки від 120 грн.</li>
-													<li>Фарбування волосся (фарба клієнта) від 150 грн.</li>
-													<li>Зачіски від 150 грн.</li>
-													<li>Хімічна завивка від 200 грн.</li>
-													<li>Догляд за волоссям</li>
-												</p>
 											</a>
 										</NavigationMenuLink>
 									</li>
