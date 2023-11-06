@@ -80,12 +80,6 @@ export default function NavBarWrapper() {
 								<ListItem href="/" title="Пуста сторінка">
 									Опис якоїсь додаткової сторінки
 								</ListItem>
-								{/* <ListItem href="/" title="Пуста сторінка">
-									Опис якоїсь додаткової сторінки
-								</ListItem>
-								<ListItem href="/" title="Пуста сторінка">
-									Опис якоїсь додаткової сторінки
-								</ListItem> */}
 							</ul>
 						</NavigationMenuContent>
 					</NavigationMenuItem>
@@ -121,12 +115,14 @@ export default function NavBarWrapper() {
 				<PopoverTrigger asChild className='min-[640px]:hidden'>
 					<Button variant="outline">Меню сайту</Button>
 				</PopoverTrigger>
-				<PopoverContent className="w-auto overflow-y-scroll h-[90vh] w-[370px]">
+				<PopoverContent className={cn('"w-auto overflow-y-scroll w-[370px]"', {
+					['h-[90vh]']: window.innerHeight <= 700
+				})}>
 					<NavigationMenu className={cn('justify-self-end')}>
 						<NavigationMenuList className='flex-col'>
 							
 							<NavigationMenuItem className='!mx-5'>
-								<ul className="grid gap-1 p-1 max-[640px]:w-[300px] sm:w-[400px] md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+								<ul className="grid gap-1 p-1 max-[640px]:w-[230px] sm:w-[400px] md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
 									<li className="row-span-3">
 										<NavigationMenuLink asChild>
 											<a
@@ -149,17 +145,11 @@ export default function NavBarWrapper() {
 									<ListItem href="/" title="Пуста сторінка">
 										Опис якоїсь додаткової сторінки
 									</ListItem>
-									<ListItem href="/" title="Пуста сторінка">
-										Опис якоїсь додаткової сторінки
-									</ListItem>
-									<ListItem href="/" title="Пуста сторінка">
-										Опис якоїсь додаткової сторінки
-									</ListItem>
 								</ul>
 							</NavigationMenuItem>
 
 							<NavigationMenuItem className='!mx-5'>
-								<ul className="grid gap-1 p-1 md:grid-cols-2 max-[640px]:w-[300px] sm:w-[400px] md:w-[400px] lg:w-[500px]">
+								<ul className="grid gap-1 p-1 md:grid-cols-2 max-[640px]:w-[230px] sm:w-[400px] md:w-[400px] lg:w-[500px]">
 									{components.map((component) => (
 										<ListItem
 											key={component.title}
